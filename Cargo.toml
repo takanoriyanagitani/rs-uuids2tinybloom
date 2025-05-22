@@ -1,0 +1,22 @@
+[package]
+name = "rs-uuids2tinybloom"
+version = "0.1.0"
+edition = "2024"
+
+description = "Creates tiny bloom bytes from uuids"
+license = "Apache-2.0"
+documentation = "https://docs.rs/crate/rs-uuids2tinybloom/latest"
+repository = "https://github.com/takanoriyanagitani/rs-uuids2tinybloom"
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+unwrap_used = "forbid"
+
+[profile.release-wasi]
+inherits = "release"
+lto = true
+strip = true
+opt-level = 's'
+codegen-units = 16
